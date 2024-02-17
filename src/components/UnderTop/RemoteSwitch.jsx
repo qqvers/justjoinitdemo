@@ -1,5 +1,4 @@
-import { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import { MyContext } from "../MyContext";
 
 export default function RemoteSwitch() {
@@ -8,16 +7,16 @@ export default function RemoteSwitch() {
     setRemoteValue(!remoteValue);
   }
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    if (remoteValue !== false) {
-      navigate({ pathname: "/", search: `remote=${remoteValue}` });
-    } else {
-      navigate({ pathname: "/", search: `` });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [remoteValue]);
+  // useEffect(() => {
+  //   if (remoteValue !== false) {
+  //     navigate({ pathname: "/", search: `remote=${remoteValue}` });
+  //   } else {
+  //     navigate({ pathname: "/", search: `` });
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [remoteValue]);
 
   return (
     <>

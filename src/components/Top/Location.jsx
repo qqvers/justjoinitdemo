@@ -1,27 +1,12 @@
-import React, { useRef, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useRef, useContext } from "react";
+
 import ModalLocation from "./ModalLocation";
 import { MyContext } from "../MyContext.jsx";
-import { useParams } from "react-router-dom";
 
 export default function Location() {
   const { selectedCity, setSelectedCity } = useContext(MyContext);
-  const { technology, remote, salary } = useParams();
 
   const dialog = useRef();
-
-  const navigate = useNavigate();
-  var checkedTech = technology ? "/" + technology : "";
-  var checkedRem = remote ? "/" + remote : "";
-  var checkedSal = salary ? "/" + salary : "";
-
-  useEffect(() => {
-    if (selectedCity !== "Location") {
-      navigate(`/${selectedCity}${checkedTech}${checkedRem}${checkedSal}`);
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCity]);
 
   function handleModal() {
     dialog.current.showModal();

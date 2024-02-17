@@ -5,7 +5,7 @@ export default function OfferNavigation({ selectedItem }) {
   const navigate = useNavigate();
 
   const handleClickBack = () => {
-    navigate(-1);
+    navigate(localStorage.getItem("lastPath"));
   };
   return (
     <div>

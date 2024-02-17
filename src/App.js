@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "offers/:id", element: <OfferMain /> },
       {
-        path: "/:location?/:technology?/:remote?/salary?",
+        path: "/:location?/:technology?/:remote?/:salary?",
         element: <HomePage />,
       },
     ],
@@ -27,25 +27,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <MyContextProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}></RouterProvider>
     </MyContextProvider>
   );
 }
 
 export default App;
-
-/*
-children: [
-          {
-            path: ":technology?",
-            element: <HomePage />,
-            children: [
-              {
-                path: ":remote?",
-                element: <HomePage />,
-                children: [{ path: ":salary?", element: <HomePage /> }],
-              },
-            ],
-          },
-        ],
-*/

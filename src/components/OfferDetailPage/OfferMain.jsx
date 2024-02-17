@@ -14,7 +14,6 @@ export default function OfferMain() {
   const selectedItem = jobData[id - 1];
   return (
     <div>
-      <h1>OFERTA O ID: {id}</h1>
       <OfferNavigation selectedItem={selectedItem} />
       <OfferTop selectedItem={selectedItem} />
       <OfferUnderTop />

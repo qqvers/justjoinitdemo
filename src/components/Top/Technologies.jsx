@@ -15,7 +15,6 @@ export default function Technologies() {
 
   function handleSelect(value) {
     if (value !== null) {
-      console.log(technologiesData[value - 1]);
       setSelectedTechnology(value);
     }
 
