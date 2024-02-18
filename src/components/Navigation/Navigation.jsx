@@ -10,7 +10,7 @@ const Navigation = () => {
   return (
     <nav className="Navigation_container">
       <div className="logo">
-        <Link to="/">
+        <Link to="/Location/undefined/false/true">
           <img src={logo} alt="logo img" />
         </Link>
       </div>

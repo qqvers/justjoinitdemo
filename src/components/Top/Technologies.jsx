@@ -6,7 +6,7 @@ import { MyContext } from "../MyContext";
 export default function Technologies() {
   const slicedData = technologiesData.slice(0, 3);
   const otherSlicedData = technologiesData.slice(3);
-  const { setSelectedTechnology } = useContext(MyContext);
+  const { selectedTechnology, setSelectedTechnology } = useContext(MyContext);
   const dialog = useRef();
 
   function handleModal() {
@@ -15,7 +15,11 @@ export default function Technologies() {
 
   function handleSelect(value) {
     if (value !== null) {
-      setSelectedTechnology(value);
+      if (value !== selectedTechnology) {
+        setSelectedTechnology(value);
+      } else {
+        setSelectedTechnology();
+      }
     }
 
     dialog.current.close();
@@ -25,7 +29,7 @@ export default function Technologies() {
     <>
       <div className="button_lang_wrapper">
         {slicedData.map((tech) => (
-          <div key={tech.id} onClick={() => handleSelect(tech.id)}>
+          <div key={tech.id} onClick={() => handleSelect(tech.name)}>
             <div className="technology_img_bg">
               <div className="technology_img">
                 <img

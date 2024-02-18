@@ -16,7 +16,7 @@ const ModalTechnologies = forwardRef(function ModalTechnologies(
           <div
             to="/settings"
             key={tech.id}
-            onClick={() => handleSelect(tech.id)}
+            onClick={() => handleSelect(tech.name)}
           >
             <div className="technology_img_bg">
               <div className="technology_img">

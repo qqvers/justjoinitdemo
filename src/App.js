@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "offers/:id", element: <OfferMain /> },
       {
-        path: "/:location?/:technology?/:remote?/:salary?",
+        path: "/:location?/:technology?/:remote?/:salary?/:search?",
         element: <HomePage />,
       },
     ],

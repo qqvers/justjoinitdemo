@@ -39,6 +39,7 @@ const NavigationHandler = () => {
 
       const newPath = `${checkedLocation}${checkedTechnology}${checkedRemote}${checkedSalary}`;
       if (window.location.pathname !== newPath) {
+        localStorage.setItem("lastPath", newPath);
         navigate(newPath);
       }
     }
@@ -59,10 +60,16 @@ const NavigationHandler = () => {
     const remoteBoolean = remote === "true";
     const salaryBoolean = salary === "true";
 
+    const checkedLocationParam = location || "Location";
+    const checkedTechnologyParam = technology || undefined;
+
+    const newPath = `/${checkedLocationParam}/${checkedTechnologyParam}/${remoteBoolean}/${salaryBoolean}`;
+    localStorage.setItem("lastPath", newPath);
+
     if (remoteValue !== remoteBoolean) {
       updateUserInteractionState(setRemoteValue, remoteBoolean);
     }
-    if (salaryFilter !== salaryBoolean) {
+    if (salary && salaryFilter !== salaryBoolean) {
       updateUserInteractionState(setSalaryFilter, salaryBoolean);
     }
     if (location && location !== selectedCity) {
@@ -70,7 +77,8 @@ const NavigationHandler = () => {
     }
     if (technology && technology !== selectedTechnology) {
       updateUserInteractionState(setSelectedTechnology, technology);
-    } // eslint-disable-next-line
+    }
+    // eslint-disable-next-line
   }, [location, technology, remote, salary]);
 
   return null;

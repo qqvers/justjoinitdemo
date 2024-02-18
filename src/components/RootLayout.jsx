@@ -1,6 +1,5 @@
 import Navigation from "./Navigation/Navigation";
 import { Outlet } from "react-router-dom";
-import NavigationHandler from "./NavigationHandler";
 
 export default function RootLayout() {
   return (
@@ -9,7 +8,6 @@ export default function RootLayout() {
       <main>
         <Outlet></Outlet>
       </main>
-      <NavigationHandler />
     </>
   );
 }
