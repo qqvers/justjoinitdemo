@@ -9,6 +9,7 @@ export const MyContextProvider = ({ children }) => {
   const [salaryFilter, setSalaryFilter] = useState(true);
   const [selectedCurrency, setSelectedCurrency] = useState("PLN");
   const [selectedTechnology, setSelectedTechnology] = useState();
+  const [userText, setUserText] = useState("empty");
   const [savedFilters, setSavedFilters] = useState([]);
 
   const latestSearch = {
@@ -61,6 +62,8 @@ export const MyContextProvider = ({ children }) => {
     savedFilters,
     selectedTechnology,
     setSelectedTechnology,
+    userText,
+    setUserText,
     handleSavedFilters,
     handleDeleteFilter,
   };

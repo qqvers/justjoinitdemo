@@ -11,6 +11,7 @@ export default function JobsList({ newJobData, currentID }) {
     selectedTechnology,
     offerType,
     selectedCurrency,
+    userText,
   } = useContext(MyContext);
   var data = newJobData ? newJobData : jobData;
 
@@ -65,8 +66,21 @@ export default function JobsList({ newJobData, currentID }) {
       selectedTechnology !== "undefined" && selectedTechnology
         ? job.technologies.includes(selectedTechnology)
         : job.technologies;
+    const matchUserText = userText
+      ? job.position.toLowerCase().includes(userText.toLowerCase()) ||
+        job.company.toLowerCase().includes(userText.toLowerCase()) ||
+        job.technologies.some((tech) =>
+          tech.toLowerCase().includes(userText.toLowerCase())
+        )
+      : true;
 
-    return matchCity && matchRemote && matchTechnology && matchSalary;
+    return (
+      matchCity &&
+      matchRemote &&
+      matchTechnology &&
+      matchSalary &&
+      matchUserText
+    );
   });
 
   const sortJobs = (jobs, type) => {

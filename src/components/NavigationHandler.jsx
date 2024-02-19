@@ -4,7 +4,7 @@ import { MyContext } from "./MyContext";
 
 const NavigationHandler = () => {
   const navigate = useNavigate();
-  const { location, technology, remote, salary } = useParams();
+  const { location, technology, remote, salary, search } = useParams();
   const {
     selectedCity,
     setSelectedCity,
@@ -14,6 +14,8 @@ const NavigationHandler = () => {
     setSalaryFilter,
     selectedTechnology,
     setSelectedTechnology,
+    userText,
+    setUserText,
   } = useContext(MyContext);
 
   const [triggeredByURLChange, setTriggeredByURLChange] = useState(true);
@@ -36,13 +38,15 @@ const NavigationHandler = () => {
       const checkedTechnology = `/${selectedTechnology}`;
       const checkedRemote = `/${remoteValue}`;
       const checkedSalary = `/${salaryFilter}`;
+      const checkedSearch = `/${userText}`;
 
-      const newPath = `${checkedLocation}${checkedTechnology}${checkedRemote}${checkedSalary}`;
+      const newPath = `${checkedLocation}${checkedTechnology}${checkedRemote}${checkedSalary}${checkedSearch}`;
       if (window.location.pathname !== newPath) {
         localStorage.setItem("lastPath", newPath);
         navigate(newPath);
       }
     }
+
     // Reset triggeredByURLChange to wait for next user interaction
     setTriggeredByURLChange(false);
   }, [
@@ -50,6 +54,7 @@ const NavigationHandler = () => {
     selectedTechnology,
     remoteValue,
     salaryFilter,
+    userText,
     navigate,
     triggeredByURLChange,
   ]);
@@ -63,7 +68,7 @@ const NavigationHandler = () => {
     const checkedLocationParam = location || "Location";
     const checkedTechnologyParam = technology || undefined;
 
-    const newPath = `/${checkedLocationParam}/${checkedTechnologyParam}/${remoteBoolean}/${salaryBoolean}`;
+    const newPath = `/${checkedLocationParam}/${checkedTechnologyParam}/${remoteBoolean}/${salaryBoolean}/${search}`;
     localStorage.setItem("lastPath", newPath);
 
     if (remoteValue !== remoteBoolean) {
@@ -78,8 +83,12 @@ const NavigationHandler = () => {
     if (technology && technology !== selectedTechnology) {
       updateUserInteractionState(setSelectedTechnology, technology);
     }
+    if (search !== "empty" && search !== userText) {
+      updateUserInteractionState(setUserText, search);
+    }
+
     // eslint-disable-next-line
-  }, [location, technology, remote, salary]);
+  }, [location, technology, remote, salary, search]);
 
   return null;
 };

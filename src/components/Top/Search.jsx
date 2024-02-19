@@ -1,15 +1,19 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { MyContext } from "../MyContext";
+import { useParams } from "react-router-dom";
 
 export default function Search() {
-  const [userText, setUserText] = useState("");
+  const { setUserText } = useContext(MyContext);
+  const { search } = useParams();
 
-  function handleChange(event) {
-    setUserText(event.target.value);
+  var textValue = "";
+  if (search !== "empty") {
+    textValue = search;
   }
 
   function submitHandler(event) {
     if (event.key === "Enter") {
-      console.log("Wyszukiwanie dla:", userText);
+      setUserText(event.target.value);
     }
   }
 
@@ -17,8 +21,7 @@ export default function Search() {
     <input
       type="text"
       placeholder="Search"
-      value={userText}
-      onChange={handleChange}
+      defaultValue={textValue}
       onKeyDown={submitHandler}
     />
   );
