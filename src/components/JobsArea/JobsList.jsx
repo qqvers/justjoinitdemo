@@ -66,13 +66,14 @@ export default function JobsList({ newJobData, currentID }) {
       selectedTechnology !== "undefined" && selectedTechnology
         ? job.technologies.includes(selectedTechnology)
         : job.technologies;
-    const matchUserText = userText
-      ? job.position.toLowerCase().includes(userText.toLowerCase()) ||
-        job.company.toLowerCase().includes(userText.toLowerCase()) ||
-        job.technologies.some((tech) =>
-          tech.toLowerCase().includes(userText.toLowerCase())
-        )
-      : true;
+    const matchUserText =
+      userText !== "empty"
+        ? job.position.toLowerCase().includes(userText.toLowerCase()) ||
+          job.company.toLowerCase().includes(userText.toLowerCase()) ||
+          job.technologies.some((tech) =>
+            tech.toLowerCase().includes(userText.toLowerCase())
+          )
+        : true;
 
     return (
       matchCity &&

@@ -83,7 +83,7 @@ const NavigationHandler = () => {
     if (technology && technology !== selectedTechnology) {
       updateUserInteractionState(setSelectedTechnology, technology);
     }
-    if (search !== "empty" && search !== userText) {
+    if (userText !== "empty" && search !== userText) {
       updateUserInteractionState(setUserText, search);
     }
 

@@ -1,7 +1,7 @@
 import { forwardRef, useContext } from "react";
 import { MyContext } from "../MyContext";
 
-const ModalGwiazdka = forwardRef(function ModalGwiazdka({ handleSelect }, ref) {
+const ModalStar = forwardRef(function ModalStar({ handleSelect }, ref) {
   const { savedFilters, handleDeleteFilter } = useContext(MyContext);
   return (
     <dialog
@@ -9,6 +9,7 @@ const ModalGwiazdka = forwardRef(function ModalGwiazdka({ handleSelect }, ref) {
       onClick={() => {
         handleSelect(null);
       }}
+      className="star_dialog"
     >
       <h2>Saved Filters</h2>
       <ul>
@@ -24,4 +25,4 @@ const ModalGwiazdka = forwardRef(function ModalGwiazdka({ handleSelect }, ref) {
   );
 });
 
-export default ModalGwiazdka;
+export default ModalStar;

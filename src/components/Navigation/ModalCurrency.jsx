@@ -7,6 +7,7 @@ const ModalCurrency = forwardRef(function ModalCurrency({ handleSelect }, ref) {
       onClick={() => {
         handleSelect(null);
       }}
+      className="currency_dialog"
     >
       <ul>
         <li onClick={() => handleSelect("PLN")}>PLN</li>

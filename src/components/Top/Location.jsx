@@ -23,7 +23,7 @@ export default function Location() {
   }
   return (
     <>
-      <button type="button" onClick={handleModal}>
+      <button type="button" onClick={handleModal} className="location_button">
         {selectedCity}
       </button>
       <ModalLocation

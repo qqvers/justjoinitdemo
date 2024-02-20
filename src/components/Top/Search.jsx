@@ -23,6 +23,7 @@ export default function Search() {
       placeholder="Search"
       defaultValue={textValue}
       onKeyDown={submitHandler}
+      className="search_input"
     />
   );
 }

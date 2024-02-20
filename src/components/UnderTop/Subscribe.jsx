@@ -8,33 +8,37 @@ export default function Subscribe() {
     offerType,
     salaryFilter,
     selectedCurrency,
+    selectedTechnology,
     handleSavedFilters,
   } = useContext(MyContext);
+
   var checkFilterStatus = false;
   if (
+    selectedTechnology !== "undefined" ||
     selectedCity !== "Location" ||
-    remoteValue !== false ||
+    remoteValue ||
     offerType !== "Default" ||
-    salaryFilter !== true
+    !salaryFilter
   ) {
     checkFilterStatus = true;
   }
 
   return (
-    checkFilterStatus && (
-      <button
-        onClick={() =>
-          handleSavedFilters(
-            selectedCity,
-            remoteValue,
-            offerType,
-            salaryFilter,
-            selectedCurrency
-          )
-        }
-      >
-        Subscribe
-      </button>
-    )
+    <button
+      className="subscribe_button"
+      style={{ visibility: checkFilterStatus ? "visible" : "hidden" }}
+      onClick={() =>
+        handleSavedFilters(
+          selectedCity,
+          remoteValue,
+          offerType,
+          salaryFilter,
+          selectedCurrency,
+          selectedTechnology
+        )
+      }
+    >
+      Subscribe
+    </button>
   );
 }

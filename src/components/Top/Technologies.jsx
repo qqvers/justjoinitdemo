@@ -25,13 +25,20 @@ export default function Technologies() {
     dialog.current.close();
   }
 
+  const generateRandomColor = () => {
+    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    return randomColor;
+  };
   return (
     <>
       <div className="button_lang_wrapper">
         {slicedData.map((tech) => (
           <div key={tech.id} onClick={() => handleSelect(tech.name)}>
             <div className="technology_img_bg">
-              <div className="technology_img">
+              <div
+                className="technology_img"
+                style={{ backgroundColor: generateRandomColor() }}
+              >
                 <img
                   src={tech.logo}
                   className="technology_logo"
@@ -42,11 +49,14 @@ export default function Technologies() {
             <div className="technology_name">{tech.name}</div>
           </div>
         ))}
-        <button onClick={handleModal}>...</button>
+        <button onClick={handleModal} className="technologies_button">
+          ...
+        </button>
         <ModalTechnologies
           ref={dialog}
           handleSelect={handleSelect}
           data_array={otherSlicedData}
+          generateRandomColor={generateRandomColor}
         />
       </div>
     </>

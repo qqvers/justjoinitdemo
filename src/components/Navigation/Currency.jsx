@@ -19,13 +19,15 @@ export default function Currency() {
   }
 
   return (
-    <>
-      <div onClick={handleModal}>{selectedCurrency}</div>
+    <div className="currency_container">
+      <button onClick={handleModal} className="navigation_button">
+        {selectedCurrency}
+      </button>
       <ModalCurrency
         ref={dialog}
         handleSelect={handleSelect}
         selected={selectedCurrency}
       />
-    </>
+    </div>
   );
 }

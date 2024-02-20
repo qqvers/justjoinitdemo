@@ -28,7 +28,7 @@ export const technologiesData = [
   {
     id: 1,
     logo: js,
-    name: "JavaScript",
+    name: "JS",
     color: "#f0db4f",
   },
   {

@@ -2,7 +2,7 @@ import logo from "../../photos/logo.png";
 import MyProfile from "./MyProfile";
 import DarkMode from "./DarkMode";
 import Sidebar from "./Menu";
-import Gwiazdka from "./Gwiazdka";
+import Star from "./Star";
 import Currency from "./Currency";
 import { Link } from "react-router-dom";
 
@@ -18,7 +18,7 @@ const Navigation = () => {
       <DarkMode />
       <div className="Navigation_right">
         <MyProfile />
-        <Gwiazdka />
+        <Star />
         <Currency />
         <Sidebar />
       </div>

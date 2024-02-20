@@ -8,6 +8,7 @@ const ModalProfile = forwardRef(function ModalProfile({ handleSelect }, ref) {
       onClick={() => {
         handleSelect(null);
       }}
+      className="myprofile_dialog"
     >
       <ul>
         <li onClick={() => handleSelect("My profile")}>

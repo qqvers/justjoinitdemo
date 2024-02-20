@@ -1,61 +1,18 @@
 * {
   box-sizing: border-box;
+  font-family: "Open Sans";
+  font-weight: bold;
+}
+html {
+  overflow-y: scroll;
 }
 
-.Navigation_container {
-  height: 4rem;
-  width: 100%;
-  display: flex;
-  padding: 1.35rem;
-  border-bottom: 0.1rem solid grey;
-}
-
-.logo img {
-  height: 1.45rem;
-}
-
-.Navigation_right {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: 100%;
-}
-
-.Navigation_right > * {
-  padding-left: 0.5rem;
-}
-
-/*Currency.css*/
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.currency {
-}
-
-.currency:hover {
-  background-color: grey;
-  border-radius: 50%;
+::backdrop {
+  background-color: transparent;
 }
 
 /* DarkMode.jsx */
-/* The switch - the box around the slider */
+
 .switch {
   position: relative;
   display: inline-block;
@@ -63,7 +20,6 @@
   height: 34px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
@@ -117,6 +73,163 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/*Navigation*/
+.navigation_button {
+  background-color: transparent;
+
+  border: none;
+  border-radius: 15px;
+  height: 2.5rem;
+  width: auto;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.navigation_button:hover {
+  background-color: #e0e0e0;
+}
+
+.Navigation_container {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  padding: 1.35rem;
+  border-bottom: 0.1rem solid rgb(228, 225, 225);
+}
+
+.logo img {
+  height: 1.45rem;
+}
+
+.Navigation_right {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.Navigation_right > * {
+  padding-left: 0.5rem;
+}
+
+/*MyProfile*/
+.myprofile_container {
+  position: relative;
+}
+
+.myprofile_dialog {
+  position: absolute;
+  background: #fff;
+  border: none;
+  border-radius: 2rem;
+  margin-top: 3rem;
+  margin-right: 10rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.myprofile_dialog ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.myprofile_dialog li {
+  padding: 10px;
+}
+
+.myprofile_dialog li:hover {
+  background-color: #f7f7f7;
+  border-radius: 1rem;
+}
+
+.myprofile_dialog li img {
+  margin-right: 10px;
+}
+.myprofile_dialog li a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Gwiazdka*/
+.star_container {
+  position: relative;
+}
+
+.star_dialog {
+  position: absolute;
+  background: #fff;
+  border: none;
+  border-radius: 2rem;
+  margin-top: 3rem;
+  margin-right: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.star_dialog ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.star_dialog li {
+  padding: 10px;
+}
+
+.star_dialog li:hover {
+  background-color: #f7f7f7;
+  border-radius: 1rem;
+}
+
+.star_dialog li img {
+  margin-right: 10px;
+}
+.star_dialog li a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Currency.css*/
+.currency_container {
+  position: relative;
+}
+
+.currency_dialog {
+  position: absolute;
+  background: #fff;
+  border: none;
+  border-radius: 2rem;
+  margin-top: 3rem;
+  margin-right: 0;
+  width: 15rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.currency_dialog ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.currency_dialog li {
+  padding: 10px;
+}
+
+.currency_dialog li:hover {
+  background-color: #f7f7f7;
+  border-radius: 2rem;
+}
+
+.currency_dialog li img {
+  margin-right: 10px;
+}
+.currency_dialog li a {
+  text-decoration: none;
+  color: black;
+}
+
 /* HomePageTop.jsx */
 .hmp_wrapper {
   height: 3rem;
@@ -125,8 +238,115 @@ input:checked + .slider:before {
   justify-content: space-around;
 }
 
+/*Search.jsx*/
+.search_input {
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 2rem;
+  background-color: rgb(226, 223, 223, 0.5);
+  width: 13rem;
+  height: 2.5rem;
+}
+.search_input:hover {
+  border-color: black;
+}
+/*Location*/
+.location_button {
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 2rem;
+  background-color: white;
+  width: 10rem;
+  height: 2.5rem;
+}
+.location_button:hover {
+  border-color: black;
+}
+
+/*Technologies*/
 .button_lang_wrapper {
+  position: relative;
   display: flex;
+  justify-content: space-around;
+  width: 10rem;
+  font-size: 0.7rem;
+}
+
+.technology_img {
+  border-radius: 50%;
+  background-color: red;
+  height: 2.3rem;
+  width: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.technology_img_modal {
+  border-radius: 50%;
+  background-color: red;
+  height: 2.3rem;
+  width: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 0.5rem;
+  top: 0.3rem;
+}
+.technology_img img {
+  height: 1rem;
+  width: auto;
+}
+.technology_img_modal img {
+  height: 1rem;
+  width: auto;
+}
+.technology_name {
+  text-align: center;
+}
+
+.technology_name_modal {
+  position: relative;
+  left: 4rem;
+  bottom: 1.2rem;
+}
+.dialog_technologies_wrapper {
+  position: relative;
+}
+
+.dialog_technologies {
+  position: absolute;
+  margin-right: 15rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 10rem;
+  overflow-x: hidden;
+}
+
+.technology_img,
+.technology_img_modal {
+  transition: box-shadow 0.3s ease;
+}
+.technology_img:hover,
+.technology_img_modal:hover {
+  box-shadow: 0 0 0 4px rgb(207, 207, 207);
+}
+
+.technology_img_bg_modal:hover {
+  background-color: rgb(241, 239, 239);
+  border-radius: 1rem;
+}
+
+.technologies_button {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.technologies_button:hover {
+  background-color: rgb(228, 227, 227);
 }
 
 /* Undertop */
@@ -145,6 +365,10 @@ input:checked + .slider:before {
   color: black;
 }
 
+/*Subscribe*/
+.subscribe_button {
+}
+
 /* MyID */
 .myid_bartek {
   height: 7rem;
@@ -154,12 +378,6 @@ input:checked + .slider:before {
   color: white;
   font-size: 4rem;
   text-align: center;
-}
-
-/*Technologies*/
-.technology_logo {
-  height: 3rem;
-  width: 3rem;
 }
 
 /*OfferTop*/

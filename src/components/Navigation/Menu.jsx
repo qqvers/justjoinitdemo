@@ -18,7 +18,9 @@ export default function Menu() {
 
   return (
     <>
-      <div onClick={handleModal}>{selected}</div>
+      <button onClick={handleModal} className="navigation_button">
+        {selected}
+      </button>
       <ModalMenu ref={dialog} handleSelect={handleSelect} selected={selected} />
     </>
   );

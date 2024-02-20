@@ -1,23 +1,26 @@
 import React, { useRef } from "react";
-import ModalProfile from "./ModalProfile";
+import ModalStar from "./ModalStar";
 
-export default function MyProfile() {
+export default function Star() {
   const dialog = useRef();
 
   function handleModal() {
     dialog.current.showModal();
   }
 
-  function handleSelect() {
+  function handleSelect(value) {
+    if (value !== null) {
+    }
+
     dialog.current.close();
   }
 
   return (
-    <div className="myprofile_container">
+    <div className="star_container">
       <button onClick={handleModal} className="navigation_button">
-        My profile
+        ⭐
       </button>
-      <ModalProfile ref={dialog} handleSelect={handleSelect} />
+      <ModalStar ref={dialog} handleSelect={handleSelect} />
     </div>
   );
 }
