@@ -16,7 +16,7 @@ export default function SalaryFilter() {
         }}
         className={!salaryFilter ? "first_selected" : "second_selected"}
       >
-        With Salary
+        Offers with salary
       </button>
       <button
         onClick={() => {
@@ -24,7 +24,7 @@ export default function SalaryFilter() {
         }}
         className={salaryFilter ? "first_selected" : "second_selected"}
       >
-        All offers
+        All offers <span style={{ color: "red" }}>99 999 offers</span>
       </button>
     </>
   );

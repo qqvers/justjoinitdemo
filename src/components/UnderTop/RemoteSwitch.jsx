@@ -7,17 +7,6 @@ export default function RemoteSwitch() {
     setRemoteValue(!remoteValue);
   }
 
-  // const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   if (remoteValue !== false) {
-  //     navigate({ pathname: "/", search: `remote=${remoteValue}` });
-  //   } else {
-  //     navigate({ pathname: "/", search: `` });
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [remoteValue]);
-
   return (
     <>
       <label className="switch">

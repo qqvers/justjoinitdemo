@@ -7,9 +7,9 @@ export default function HomePageUnderTop() {
   return (
     <div className="undertop_wrapper">
       <SalaryFilter />
-      <Subscribe />
-      <RemoteSwitch />
       <OfferType />
+      <RemoteSwitch />
+      <Subscribe />
     </div>
   );
 }

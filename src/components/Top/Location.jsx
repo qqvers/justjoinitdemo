@@ -22,7 +22,7 @@ export default function Location() {
     }
   }
   return (
-    <>
+    <div className="position_modal_location_wrapper">
       <button type="button" onClick={handleModal} className="location_button">
         {selectedCity}
       </button>
@@ -31,6 +31,6 @@ export default function Location() {
         handleSelect={handleSelect}
         selected={selectedCity}
       />
-    </>
+    </div>
   );
 }

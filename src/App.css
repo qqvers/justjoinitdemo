@@ -235,7 +235,10 @@ input:checked + .slider:before {
   height: 3rem;
   margin: 1rem;
   display: flex;
-  justify-content: space-around;
+}
+
+.hmp_wrapper > * {
+  padding-left: 1rem;
 }
 
 /*Search.jsx*/
@@ -252,17 +255,20 @@ input:checked + .slider:before {
 /*Location*/
 .position_modal_location_wrapper {
   position: relative;
+  border: none;
 }
 .modal_location_dialog {
   position: absolute;
-  margin-right: -10rem;
+  margin-left: 15rem;
   margin-top: 7.6rem;
+  border: none;
   padding: 0;
   width: 50rem;
-  border: rgb(223, 223, 223) solid 0.1px;
+  border: none;
   border-radius: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 .location_button {
   border: 1px solid rgb(212, 212, 212);
   border-radius: 2rem;
@@ -434,18 +440,58 @@ input:checked + .slider:before {
 
 /* Undertop */
 .undertop_wrapper {
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  width: 100%;
+}
+
+.undertop_wrapper > :nth-child(3),
+.undertop_wrapper > :nth-child(4),
+.undertop_wrapper > :nth-child(5),
+.undertop_wrapper > :nth-child(6) {
+  float: right;
 }
 
 /*Salaryfilter*/
+
 .first_selected {
-  background-color: black;
-  color: white;
+  position: relative;
+  background-color: rgb(221, 221, 221);
+  color: rgb(51, 51, 51);
+  border-radius: 1.2rem 1.2rem 0 0;
+  height: 2.4rem;
+  border: none;
+  margin: 0 1rem;
 }
+
+/* .first_selected::before,
+.first_selected::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1rem 1rem 0 0;
+  border-color: rgb(221, 221, 221);
+  border-radius: 100% 0 0 0;
+} */
+
+.first_selected::before {
+  left: -1rem; /* Wartość powinna być ustawiona tak, aby pasowała do rozmiaru trójkąta */
+  transform: rotate(-90deg, 90deg);
+}
+
+.first_selected::after {
+  right: -1rem; /* Wartość powinna być ustawiona tak, aby pasowała do rozmiaru trójkąta */
+  transform: rotate(90deg);
+}
+
 .second_selected {
   background-color: white;
-  color: black;
+  color: rgb(51, 51, 51);
+  border: none;
+  margin: 0 1rem;
+  height: 2.4rem;
 }
 
 /*Subscribe*/
