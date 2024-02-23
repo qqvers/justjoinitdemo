@@ -140,11 +140,14 @@ export default function JobsList({ newJobData, currentID }) {
                 </p>
               </div>
               <div className="job_list_column_three">
-                <p>{convertedSalary}</p>
+                <p className="job_list_element_salary">{convertedSalary}</p>
+                <p className="job_list_element_date">{job.date_added}</p>
                 {job.technologies && job.technologies.length > 0 && (
-                  <p className="technology_list_item"> {job.technologies}</p>
+                  <p className="job_list_element_technology">
+                    {" "}
+                    {job.technologies}
+                  </p>
                 )}
-                <p>{job.date_added}</p>
               </div>
             </div>
           </Link>

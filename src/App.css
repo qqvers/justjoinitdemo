@@ -3,6 +3,7 @@
   font-family: "Open Sans";
   font-weight: bold;
 }
+
 html {
   overflow-y: scroll;
 }
@@ -512,7 +513,7 @@ input:checked + .slider:before {
   margin-right: 0;
   margin-top: 11rem;
   width: 13rem;
-  height: 10rem;
+  height: 14rem;
   border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 2rem;
@@ -521,7 +522,7 @@ input:checked + .slider:before {
 .offertype_container button {
   background: transparent;
   height: 2rem;
-  width: 6rem;
+  width: 100%;
   border: none;
   border-radius: 2rem;
   margin: 0 1rem;
@@ -535,15 +536,17 @@ input:checked + .slider:before {
 .offertype_modal_conatiner {
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 
 .offertype_dialog button {
   background-color: transparent;
   border: none;
-  height: 2rem;
+  height: 2.3rem;
   text-align: left;
   font-size: 1rem;
   padding-left: 0.7rem;
+  margin: 0.3rem 0;
 }
 .offertype_dialog button:hover {
   background-color: rgb(223, 221, 221);
@@ -572,23 +575,24 @@ input:checked + .slider:before {
 }
 /*JobsArea*/
 .jobs_container {
+  position: relative;
   background-color: rgb(223, 221, 221);
   width: 100%;
   height: 100%;
+  padding-bottom: 2rem;
 }
 
 .jobs_container a {
   display: block;
   background-color: white;
   width: 100%-4rem;
-  height: 8rem;
+  height: 7rem;
   margin: 2rem;
   color: black;
   border: "1px solid #ccc";
   text-decoration: none;
-}
-
-.jobs_container a:first-child {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(139, 139, 139, 0.5);
   margin-top: 0;
 }
 
@@ -599,7 +603,7 @@ input:checked + .slider:before {
 
 .job_list_element_container img {
   position: relative;
-  margin-left: 1rem;
+  margin: 0 1rem;
   width: 4rem;
   height: 100%;
 }
@@ -607,16 +611,32 @@ input:checked + .slider:before {
 .job_list_column_two span {
   display: block;
   margin-left: 0.5rem;
+  font-size: 1.2rem;
 }
 .job_list_column_two > p {
   display: inline-block;
   margin: 0 0.5rem;
+  color: rgb(117, 117, 117);
 }
 
 .job_list_column_three {
   margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.job_list_element_salary {
+  width: 0;
+  color: rgb(144 229 18);
+  flex: 1;
 }
 
+.job_list_element_date {
+  color: red;
+}
+
+.job_list_element_technology {
+  flex-basis: 100%;
+}
 /*OfferTop*/
 .offer_wrapper {
   width: 100%;
