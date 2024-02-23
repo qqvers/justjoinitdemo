@@ -19,13 +19,13 @@ export default function OfferType() {
   }
 
   return (
-    <>
+    <div className="offertype_container">
       <button onClick={handleModal}>{offerType}</button>
       <ModalOfferType
         ref={dialog}
         handleSelect={handleSelect}
         selected={offerType}
       />
-    </>
+    </div>
   );
 }

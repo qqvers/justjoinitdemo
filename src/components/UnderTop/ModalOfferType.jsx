@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 const ModalOfferType = forwardRef(function ModalOfferType(
-  { handleSelect },
+  { selected, handleSelect },
   ref
 ) {
   return (
@@ -10,13 +10,34 @@ const ModalOfferType = forwardRef(function ModalOfferType(
       onClick={() => {
         handleSelect(null);
       }}
+      className="offertype_dialog"
     >
-      <ul>
-        <li onClick={() => handleSelect("Default")}>Default</li>
-        <li onClick={() => handleSelect("Latest")}>Latest</li>
-        <li onClick={() => handleSelect("Highest salary")}>Highest salary</li>
-        <li onClick={() => handleSelect("Lowest salary")}>Lowest salary</li>
-      </ul>
+      <div className="offertype_modal_conatiner">
+        <button
+          onClick={() => handleSelect("Default")}
+          style={{ color: selected === "Default" ? "red" : "initial" }}
+        >
+          Default
+        </button>
+        <button
+          onClick={() => handleSelect("Latest")}
+          style={{ color: selected === "Latest" ? "red" : "initial" }}
+        >
+          Latest
+        </button>
+        <button
+          onClick={() => handleSelect("Highest salary")}
+          style={{ color: selected === "Highest salary" ? "red" : "initial" }}
+        >
+          Highest salary
+        </button>
+        <button
+          onClick={() => handleSelect("Lowest salary")}
+          style={{ color: selected === "Lowest salary" ? "red" : "initial" }}
+        >
+          Lowest salary
+        </button>
+      </div>
     </dialog>
   );
 });

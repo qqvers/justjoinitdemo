@@ -462,28 +462,24 @@ input:checked + .slider:before {
   border: none;
   margin: 0 1rem;
 }
-
-/* .first_selected::before,
+.first_selected::before,
 .first_selected::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 1rem 1rem 0 0;
-  border-color: rgb(221, 221, 221);
-  border-radius: 100% 0 0 0;
-} */
-
-.first_selected::before {
-  left: -1rem; /* Wartość powinna być ustawiona tak, aby pasowała do rozmiaru trójkąta */
-  transform: rotate(-90deg, 90deg);
+  top: 0;
+  left: 100%;
+  height: 2.4rem;
+  width: 2.4rem;
+  border-bottom-left-radius: 50%;
+  background: transparent;
+  box-shadow: 0 1.2rem 0 0 rgb(221, 221, 221);
+  z-index: -3;
 }
 
-.first_selected::after {
-  right: -1rem; /* Wartość powinna być ustawiona tak, aby pasowała do rozmiaru trójkąta */
-  transform: rotate(90deg);
+.first_selected::before {
+  left: -2.4rem;
+  transform: scaleX(-1);
+  z-index: -3;
 }
 
 .second_selected {
@@ -496,17 +492,129 @@ input:checked + .slider:before {
 
 /*Subscribe*/
 .subscribe_button {
+  background: transparent;
+  height: 2rem;
+  width: 6rem;
+  border: none;
+  border-radius: 2rem;
+  margin-right: 2rem;
+  font-size: 0.9rem;
+}
+.subscribe_button:hover {
+  background-color: rgb(211, 210, 210);
+}
+/*Offertype*/
+.offertype_container {
+  position: relative;
+}
+.offertype_dialog {
+  position: absolute;
+  margin-right: 0;
+  margin-top: 11rem;
+  width: 13rem;
+  height: 10rem;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+}
+
+.offertype_container button {
+  background: transparent;
+  height: 2rem;
+  width: 6rem;
+  border: none;
+  border-radius: 2rem;
+  margin: 0 1rem;
+  font-size: 0.9rem;
+}
+
+.offertype_container button:hover {
+  background-color: rgb(211, 210, 210);
+}
+
+.offertype_modal_conatiner {
+  display: flex;
+  flex-direction: column;
+}
+
+.offertype_dialog button {
+  background-color: transparent;
+  border: none;
+  height: 2rem;
+  text-align: left;
+  font-size: 1rem;
+  padding-left: 0.7rem;
+}
+.offertype_dialog button:hover {
+  background-color: rgb(223, 221, 221);
+  border-radius: 2rem;
 }
 
 /* MyID */
+.myid_top_container {
+  height: 3rem;
+  background-color: rgb(223, 221, 221);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
 .myid_bartek {
   height: 7rem;
-  width: 100%-1rem;
-  margin: 1rem;
-  background-color: purple;
-  color: white;
-  font-size: 4rem;
+  width: 100%;
+  background-color: rgb(223, 221, 221);
+  color: rgb(41, 41, 41);
+  font-size: 3.5rem;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*JobsArea*/
+.jobs_container {
+  background-color: rgb(223, 221, 221);
+  width: 100%;
+  height: 100%;
+}
+
+.jobs_container a {
+  display: block;
+  background-color: white;
+  width: 100%-4rem;
+  height: 8rem;
+  margin: 2rem;
+  color: black;
+  border: "1px solid #ccc";
+  text-decoration: none;
+}
+
+.jobs_container a:first-child {
+  margin-top: 0;
+}
+
+.job_list_element_container {
+  display: flex;
+  align-items: center;
+}
+
+.job_list_element_container img {
+  position: relative;
+  margin-left: 1rem;
+  width: 4rem;
+  height: 100%;
+}
+
+.job_list_column_two span {
+  display: block;
+  margin-left: 0.5rem;
+}
+.job_list_column_two > p {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.job_list_column_three {
+  margin-left: auto;
 }
 
 /*OfferTop*/
@@ -527,13 +635,13 @@ input:checked + .slider:before {
   width: 100%;
   height: 10rem;
   display: flex;
-  flex-wrap: wrap; /* Umożliwia zawijanie elementów w razie potrzeby */
+  flex-wrap: wrap;
 }
 
 .offerUT_box {
   width: 50%;
-  border: 1px solid #ccc; /* Dodatkowy stylizacyjny border */
-  padding: 20px; /* Dodatkowy padding dla estetyki */
+  border: 1px solid #ccc;
+  padding: 20px;
 }
 
 /*OfferSimilar*/

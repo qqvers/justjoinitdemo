@@ -117,7 +117,7 @@ export default function JobsList({ newJobData, currentID }) {
   const orderedData = sortJobs(filteredData, offerType);
 
   return (
-    <div>
+    <div className="jobs_container">
       {orderedData.map((job) => {
         const convertedSalary = convertSalary(
           job.salary,
@@ -125,38 +125,28 @@ export default function JobsList({ newJobData, currentID }) {
           exchangeRates
         );
         return job.id !== currentID ? (
-          <Link
-            to={`/offers/${job.id}`}
-            key={job.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "10px",
-              marginBottom: "20px",
-              textDecoration: "none",
-              color: "black",
-            }}
-          >
-            <img
-              src={job.logo}
-              alt="Company Logo"
-              style={{
-                maxWidth: "100px",
-                maxHeight: "100px",
-                marginBottom: "10px",
-              }}
-            />
-            <h2>{job.position}</h2>
-            <p>{job.company}</p>
-            <p>{job.city}</p>
-            <p>{job.fullyRemote ? "Fully Remote" : "Not Fully Remote"}</p>
-            <p>
-              {job.friendly ? "Friendly Workplace" : "Not Friendly Workplace"}
-            </p>
-            <p>{convertedSalary}</p>
-            {job.technologies && job.technologies.length > 0 && (
-              <p>Technologies: {job.technologies.join(", ")}</p>
-            )}
-            <p>{job.date_added}</p>
+          <Link to={`/offers/${job.id}`} key={job.id}>
+            <div className="job_list_element_container">
+              <img src={job.logo} alt="Company Logo" />
+              <div className="job_list_column_two">
+                <span>{job.position}</span>
+                <p>{job.company}</p>
+                <p>{job.city}</p>
+                <p>{job.fullyRemote ? "Fully Remote" : "Not Fully Remote"}</p>
+                <p>
+                  {job.friendly
+                    ? "Friendly Workplace"
+                    : "Not Friendly Workplace"}
+                </p>
+              </div>
+              <div className="job_list_column_three">
+                <p>{convertedSalary}</p>
+                {job.technologies && job.technologies.length > 0 && (
+                  <p className="technology_list_item"> {job.technologies}</p>
+                )}
+                <p>{job.date_added}</p>
+              </div>
+            </div>
           </Link>
         ) : null;
       })}
