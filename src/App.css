@@ -6,6 +6,7 @@
 
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 ::backdrop {
@@ -90,6 +91,7 @@ input:checked + .slider:before {
 
 .navigation_button:hover {
   background-color: #e0e0e0;
+  cursor: pointer;
 }
 
 .Navigation_container {
@@ -144,6 +146,7 @@ input:checked + .slider:before {
 .myprofile_dialog li:hover {
   background-color: #f7f7f7;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .myprofile_dialog li img {
@@ -182,6 +185,7 @@ input:checked + .slider:before {
 .star_dialog li:hover {
   background-color: #f7f7f7;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .star_dialog li img {
@@ -221,6 +225,7 @@ input:checked + .slider:before {
 .currency_dialog li:hover {
   background-color: #f7f7f7;
   border-radius: 2rem;
+  cursor: pointer;
 }
 
 .currency_dialog li img {
@@ -252,6 +257,7 @@ input:checked + .slider:before {
 }
 .search_input:hover {
   border-color: black;
+  cursor: pointer;
 }
 /*Location*/
 .position_modal_location_wrapper {
@@ -279,6 +285,7 @@ input:checked + .slider:before {
 }
 .location_button:hover {
   border-color: black;
+  cursor: pointer;
 }
 
 .location_button_modal {
@@ -292,6 +299,7 @@ input:checked + .slider:before {
 }
 .location_button:hover {
   border-color: black;
+  cursor: pointer;
 }
 .ml_wrapper {
   margin: 1rem;
@@ -324,6 +332,7 @@ input:checked + .slider:before {
 }
 .modal_location_top button:hover {
   border-color: rgb(58, 58, 58);
+  cursor: pointer;
 }
 .ml_wrapper input {
   border: 1px solid rgb(212, 212, 212);
@@ -356,13 +365,12 @@ input:checked + .slider:before {
   position: relative;
   display: flex;
   justify-content: space-around;
-  width: 10rem;
+  width: 100%;
   font-size: 0.7rem;
 }
 
 .technology_img {
   border-radius: 50%;
-  background-color: red;
   height: 2.3rem;
   width: 2.3rem;
   display: flex;
@@ -420,11 +428,13 @@ input:checked + .slider:before {
 .technology_img:hover,
 .technology_img_modal:hover {
   box-shadow: 0 0 0 4px rgb(207, 207, 207);
+  cursor: pointer;
 }
 
 .technology_img_bg_modal:hover {
   background-color: rgb(241, 239, 239);
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .technologies_button {
@@ -437,6 +447,7 @@ input:checked + .slider:before {
 
 .technologies_button:hover {
   background-color: rgb(228, 227, 227);
+  cursor: pointer;
 }
 
 /* Undertop */
@@ -463,6 +474,9 @@ input:checked + .slider:before {
   border: none;
   margin: 0 1rem;
 }
+.first_selected:hover {
+  cursor: pointer;
+}
 .first_selected::before,
 .first_selected::after {
   content: "";
@@ -484,11 +498,38 @@ input:checked + .slider:before {
 }
 
 .second_selected {
+  position: relative;
   background-color: white;
   color: rgb(51, 51, 51);
   border: none;
   margin: 0 1rem;
   height: 2.4rem;
+}
+
+.second_selected:hover {
+  background-color: rgb(158, 158, 158);
+  border-radius: 1.2rem 1.2rem 0 0;
+  cursor: pointer;
+}
+
+.second_selected:hover::before,
+.second_selected:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 2.4rem;
+  width: 2.4rem;
+  border-bottom-left-radius: 50%;
+  background: transparent;
+  box-shadow: 0 1.2rem 0 0 rgb(158, 158, 158);
+  z-index: -3;
+}
+
+.second_selected:hover::before {
+  left: -2.4rem;
+  transform: scaleX(-1);
+  z-index: -3;
 }
 
 /*Subscribe*/
@@ -503,6 +544,7 @@ input:checked + .slider:before {
 }
 .subscribe_button:hover {
   background-color: rgb(211, 210, 210);
+  cursor: pointer;
 }
 /*Offertype*/
 .offertype_container {
@@ -531,6 +573,7 @@ input:checked + .slider:before {
 
 .offertype_container button:hover {
   background-color: rgb(211, 210, 210);
+  cursor: pointer;
 }
 
 .offertype_modal_conatiner {
@@ -551,6 +594,7 @@ input:checked + .slider:before {
 .offertype_dialog button:hover {
   background-color: rgb(223, 221, 221);
   border-radius: 2rem;
+  cursor: pointer;
 }
 
 /* MyID */
@@ -599,13 +643,20 @@ input:checked + .slider:before {
 .job_list_element_container {
   display: flex;
   align-items: center;
+  height: 100%;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.job_list_element_container:hover {
+  box-shadow: 5px 5px 5px rgb(121, 121, 121, 0.5);
+  cursor: pointer;
 }
 
 .job_list_element_container img {
   position: relative;
   margin: 0 1rem;
   width: 4rem;
-  height: 100%;
+  height: auto;
 }
 
 .job_list_column_two span {
@@ -615,8 +666,32 @@ input:checked + .slider:before {
 }
 .job_list_column_two > p {
   display: inline-block;
+
   margin: 0 0.5rem;
+  margin-top: 0.9rem;
   color: rgb(117, 117, 117);
+}
+
+.job_list_remote {
+  border-radius: 2rem;
+  border: none;
+  background-color: rgb(233, 233, 233);
+  scale: 80%;
+  padding: 0.2rem;
+}
+.job_friendly_workplace {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(7, 147, 228) 50%,
+    rgb(255, 230, 0) 50%
+  );
+}
+
+.job_list_column_two > p.job_list_remote {
+  color: rgb(41, 41, 41);
 }
 
 .job_list_column_three {
@@ -628,14 +703,32 @@ input:checked + .slider:before {
   width: 0;
   color: rgb(144 229 18);
   flex: 1;
+  text-align: center;
 }
 
 .job_list_element_date {
-  color: red;
+  margin-right: 1rem;
+  color: rgb(97, 96, 96);
+  background-color: rgb(224, 224, 224);
+  border-radius: 2rem;
+  padding: 0.2rem;
 }
 
 .job_list_element_technology {
   flex-basis: 100%;
+  padding-right: 1rem;
+  text-align: right;
+  font-size: 0.8rem;
+  color: rgb(73, 73, 73);
+}
+
+.job_list_element_technology p {
+  display: inline;
+  padding: 0.2rem;
+  margin: 0 0.2rem;
+  width: 100%;
+  border-radius: 2rem;
+  border: 0.5px solid rgb(204, 202, 202);
 }
 /*OfferTop*/
 .offer_wrapper {

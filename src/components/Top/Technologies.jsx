@@ -1,13 +1,26 @@
-import { useRef, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import ModalTechnologies from "./ModalTechnologies";
 import { technologiesData } from "../../data_technologies";
 import { MyContext } from "../MyContext";
 
 export default function Technologies() {
-  const slicedData = technologiesData.slice(0, 3);
-  const otherSlicedData = technologiesData.slice(3);
+  const [displayCount, setDisplayCount] = useState(3);
   const { selectedTechnology, setSelectedTechnology } = useContext(MyContext);
   const dialog = useRef();
+
+  useEffect(() => {
+    const updateDisplayCount = () => {
+      const width = window.innerWidth;
+
+      setDisplayCount(width / 100);
+    };
+    window.addEventListener("resize", updateDisplayCount);
+    updateDisplayCount();
+    return () => window.removeEventListener("resize", updateDisplayCount);
+  }, []);
+
+  const slicedData = technologiesData.slice(0, displayCount);
+  const otherSlicedData = technologiesData.slice(displayCount);
 
   function handleModal() {
     dialog.current.showModal();
@@ -21,14 +34,13 @@ export default function Technologies() {
         setSelectedTechnology();
       }
     }
-
     dialog.current.close();
   }
 
   const generateRandomColor = () => {
-    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-    return randomColor;
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
   };
+
   return (
     <>
       <div className="button_lang_wrapper">

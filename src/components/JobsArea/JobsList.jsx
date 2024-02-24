@@ -132,21 +132,20 @@ export default function JobsList({ newJobData, currentID }) {
                 <span>{job.position}</span>
                 <p>{job.company}</p>
                 <p>{job.city}</p>
-                <p>{job.fullyRemote ? "Fully Remote" : "Not Fully Remote"}</p>
-                <p>
-                  {job.friendly
-                    ? "Friendly Workplace"
-                    : "Not Friendly Workplace"}
+                <p className={job.fullyRemote ? "job_list_remote" : null}>
+                  {job.fullyRemote ? "Fully Remote" : null}
                 </p>
+                <p className={job.friendly ? "job_friendly_workplace" : ""}></p>
               </div>
               <div className="job_list_column_three">
                 <p className="job_list_element_salary">{convertedSalary}</p>
                 <p className="job_list_element_date">{job.date_added}</p>
                 {job.technologies && job.technologies.length > 0 && (
-                  <p className="job_list_element_technology">
-                    {" "}
-                    {job.technologies}
-                  </p>
+                  <div className="job_list_element_technology">
+                    {job.technologies.map((technology) => {
+                      return <p key={technology}>{technology}</p>;
+                    })}
+                  </div>
                 )}
               </div>
             </div>
