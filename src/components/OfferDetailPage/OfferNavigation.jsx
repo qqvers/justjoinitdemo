@@ -22,7 +22,7 @@ export default function OfferNavigation({ selectedItem }) {
   };
 
   return (
-    <div>
+    <div className="offer_navigation_container">
       <button onClick={handleClickBack}>Back</button>
       <Link to="/">All offers</Link>
       <span>&gt;</span>

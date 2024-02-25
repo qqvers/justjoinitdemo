@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { jobData } from "../../data";
 import { MyContext } from "../MyContext";
 
-export default function JobsList({ newJobData, currentID }) {
+export default function JobsList({ newJobData, currentID, style }) {
   const {
     salaryFilter,
     selectedCity,
@@ -117,7 +117,7 @@ export default function JobsList({ newJobData, currentID }) {
   const orderedData = sortJobs(filteredData, offerType);
 
   return (
-    <div className="jobs_container">
+    <div className="jobs_container" style={style ? style : null}>
       {orderedData.map((job) => {
         const convertedSalary = convertSalary(
           job.salary,

@@ -8,12 +8,13 @@ export default function RemoteSwitch() {
   }
 
   return (
-    <>
+    <div className="remote_switch_wrapper">
       <label className="switch">
         <input type="checkbox" onChange={switchHandler} checked={remoteValue} />
-        <span className="slider round"></span>
-        <p>Remote</p>
+        <span className="slider round">
+          <p>Remote</p>
+        </span>
       </label>
-    </>
+    </div>
   );
 }

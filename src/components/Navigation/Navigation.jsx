@@ -1,6 +1,5 @@
 import logo from "../../photos/logo.png";
 import MyProfile from "./MyProfile";
-import DarkMode from "./DarkMode";
 import Sidebar from "./Menu";
 import Star from "./Star";
 import Currency from "./Currency";
@@ -15,7 +14,6 @@ const Navigation = () => {
         </Link>
       </div>
 
-      <DarkMode />
       <div className="Navigation_right">
         <MyProfile />
         <Star />

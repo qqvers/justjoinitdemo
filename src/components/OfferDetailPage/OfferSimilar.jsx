@@ -7,9 +7,19 @@ export default function OfferSimilar({ selectedItem }) {
   const shuffledJobData = jobData.slice().sort(randomSort);
   const slicedData = shuffledJobData.slice(0, 3);
   return (
-    <div>
+    <div className="offer_similar_container">
       <h3>Check similar offers</h3>
-      <JobsList newJobData={slicedData} currentID={selectedItem.id}></JobsList>
+      <JobsList
+        style={{
+          backgroundColor: "white",
+          margin: "0 1rem",
+          width: "calc(100% - 2rem)",
+          borderBottomLeftRadius: "2rem",
+          borderBottomRightRadius: "2rem",
+        }}
+        newJobData={slicedData}
+        currentID={selectedItem.id}
+      ></JobsList>
     </div>
   );
 }

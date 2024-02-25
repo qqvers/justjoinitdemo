@@ -1,6 +1,6 @@
 export default function OfferApply() {
   return (
-    <div>
+    <div className="apply_container">
       <button>Apply</button>
     </div>
   );

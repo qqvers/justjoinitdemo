@@ -21,7 +21,7 @@ export default function OfferTechStack({ selectedItem }) {
   }
 
   return (
-    <div>
+    <div className="job_container">
       <h1>Tech stack</h1>
       {selectedItem.technologies.map((item) => {
         const randomNumber = generateRandom();

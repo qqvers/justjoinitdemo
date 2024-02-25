@@ -1,8 +1,8 @@
 export default function OfferJobDescription({ selectedItem }) {
   return (
-    <div>
+    <div className="job_container">
       <h2>Job description</h2>
-      <h1>{selectedItem.position}</h1>
+      <h3>{selectedItem.position}</h3>
       <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae
         nibh sagittis, elementum massa id, iaculis lectus. Suspendisse libero
