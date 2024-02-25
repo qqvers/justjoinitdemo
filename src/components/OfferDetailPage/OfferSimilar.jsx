@@ -14,8 +14,8 @@ export default function OfferSimilar({ selectedItem }) {
           backgroundColor: "white",
           margin: "0 1rem",
           width: "calc(100% - 2rem)",
-          borderBottomLeftRadius: "2rem",
-          borderBottomRightRadius: "2rem",
+          borderBottomLeftRadius: "0.5rem",
+          borderBottomRightRadius: "0.5rem",
         }}
         newJobData={slicedData}
         currentID={selectedItem.id}

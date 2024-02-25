@@ -84,6 +84,10 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+/*HomePage*/
+.home_page_wrapper {
+  padding-top: 4rem;
+}
 
 /*Navigation*/
 .navigation_button {
@@ -112,6 +116,7 @@ input:checked + .slider:before {
   display: flex;
   padding: 1.35rem;
   border-bottom: 0.1rem solid rgb(228, 225, 225);
+  z-index: 100;
 }
 
 .logo img {
@@ -743,29 +748,100 @@ input:checked + .slider:before {
 }
 /*OfferTop*/
 .offer_wrapper {
-  width: 100%;
-  height: 20rem;
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  height: 14rem;
   display: flex;
+  background: linear-gradient(to right, #003366, #4bccf7);
+  color: white;
+}
+
+.offer_logo {
+  width: 10rem;
+  height: 10rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 2rem 1rem;
 }
 
 .offer_logo img {
-  margin: 2rem;
-  width: 10rem;
+  width: 6rem;
   height: auto;
+}
+
+.offer_top span {
+  margin-left: 1rem;
+  margin-right: 2rem;
+}
+.offer_top h1 {
+  margin-left: 1rem;
+}
+
+.offer_top_salary {
+  background-color: rgba(55, 32, 255, 0.5);
+  margin: 2rem 1rem;
+  border-radius: 1rem;
+  height: 4rem;
+}
+.offer_top_salary span {
+  position: relative;
+  top: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.offer_top_salary p {
+  margin-left: 1rem;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
 }
 
 /*OfferUnderTop*/
 .offerUT_container {
-  width: 100%;
+  width: calc(100% - 2rem);
   height: 10rem;
   display: flex;
   flex-wrap: wrap;
+  background-color: white;
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin: 0 1rem;
 }
 
 .offerUT_box {
   width: 50%;
-  border: 1px solid #ccc;
-  padding: 20px;
+
+  text-align: center;
+  padding-top: 1%;
+}
+/*TechStack*/
+.offer_tech_stack_dots {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.tech_stack_items {
+  display: inline-block;
+  margin: 2rem;
+  scale: 1.2;
+  width: 14rem;
+}
+.tech_stack_items p {
+  margin: 0;
+  padding: 0;
+}
+.tech_stack_items p:nth-child(1) {
+  position: relative;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+.tech_stack_items p:nth-child(3) {
+  position: relative;
+  bottom: 1rem;
+  font-size: 0.8rem;
 }
 
 /*Footer*/
@@ -810,7 +886,7 @@ input:checked + .slider:before {
   margin-top: 3rem;
   padding: 1rem;
   padding-left: 2rem;
-  border-radius: 2rem 2rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   background-color: white;
   width: calc(100% - 2rem);
 }
@@ -851,6 +927,7 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   gap: 1rem;
+  z-index: 100;
 }
 .offer_navigation_container a {
   text-decoration: none;
@@ -862,6 +939,6 @@ input:checked + .slider:before {
   margin: 1rem 1rem;
   width: calc(100% - 2rem);
   background-color: white;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   padding: 1rem;
 }

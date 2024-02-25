@@ -20,18 +20,39 @@ export default function OfferTechStack({ selectedItem }) {
     }
   }
 
+  function renderDots(numberOfPink) {
+    let dots = [];
+    for (let i = 1; i <= 5; i++) {
+      dots.push(
+        <span
+          key={i}
+          style={{ color: i <= numberOfPink ? "rgb(238, 81, 107)" : "gray" }}
+        >
+          &bull;
+        </span>
+      );
+    }
+    return <span>{dots}</span>;
+  }
+
   return (
     <div className="job_container">
       <h1>Tech stack</h1>
-      {selectedItem.technologies.map((item) => {
-        const randomNumber = generateRandom();
-        const skillLevel = getSkillLevel(randomNumber);
-        return (
-          <div key={item}>
-            {item} {randomNumber}- {skillLevel}
-          </div>
-        );
-      })}
+      <div className="offer_tech_stack_technology_container">
+        {selectedItem.technologies.map((item, index) => {
+          const randomNumber = generateRandom();
+          const skillLevel = getSkillLevel(randomNumber);
+          return (
+            <div key={index} className="tech_stack_items">
+              <p>{item}</p>
+              <p className="offer_tech_stack_dots">
+                {renderDots(randomNumber)}
+              </p>
+              <p>{skillLevel}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
