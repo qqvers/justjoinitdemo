@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
 * {
   box-sizing: border-box;
   font-family: "Open Sans";
@@ -16,7 +18,7 @@ html {
 .remote_switch_wrapper {
   position: relative;
   margin: 0 1rem;
-  top: 0.5rem;
+  top: 0.3rem;
 }
 .switch {
   position: relative;
@@ -38,7 +40,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #ececec;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -72,7 +74,7 @@ input:checked + .slider:before {
   display: inline;
   position: absolute;
   right: 2.1rem;
-  bottom: -0.7rem;
+  bottom: -0.9rem;
   font-size: 0.9rem;
 }
 
@@ -509,7 +511,7 @@ input:checked + .slider:before {
 }
 
 .first_selected::before {
-  left: -2.4rem;
+  left: -2.3rem;
   transform: scaleX(-1);
   z-index: -3;
 }
@@ -818,15 +820,18 @@ input:checked + .slider:before {
 }
 /*TechStack*/
 .offer_tech_stack_dots {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin: 0;
   padding: 0;
+}
+.offer_tech_stack_dots span {
+  margin-right: 0.2rem;
 }
 
 .tech_stack_items {
   display: inline-block;
   margin: 2rem;
-  scale: 1.2;
+  scale: 1.1;
   width: 14rem;
 }
 .tech_stack_items p {
@@ -842,6 +847,7 @@ input:checked + .slider:before {
   position: relative;
   bottom: 1rem;
   font-size: 0.8rem;
+  color: grey;
 }
 
 /*Footer*/
