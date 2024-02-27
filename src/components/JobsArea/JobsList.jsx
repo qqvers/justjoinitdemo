@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { jobData } from "../../data";
 import { MyContext } from "../MyContext";
@@ -15,6 +15,7 @@ export default function JobsList({ newJobData, currentID, style }) {
     offerType,
     selectedCurrency,
     userText,
+    setJobsTotal,
   } = useContext(MyContext);
   var data = newJobData ? newJobData : jobData;
 
@@ -118,6 +119,11 @@ export default function JobsList({ newJobData, currentID, style }) {
   };
 
   const orderedData = sortJobs(filteredData, offerType);
+
+  useEffect(() => {
+    setJobsTotal(orderedData.length);
+    // eslint-disable-next-line
+  }, [orderedData]);
 
   return (
     <div className="jobs_container" style={style ? style : null}>

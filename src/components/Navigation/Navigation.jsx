@@ -13,6 +13,9 @@ const Navigation = () => {
           <img src={logo} alt="logo img" />
         </Link>
       </div>
+      <span className="navigation_container_span_text">
+        #1 Job Board for tech industry in Europe
+      </span>
 
       <div className="Navigation_right">
         <MyProfile />

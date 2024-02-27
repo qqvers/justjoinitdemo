@@ -24,7 +24,7 @@ export default function SalaryFilter() {
         }}
         className={salaryFilter ? "first_selected" : "second_selected"}
       >
-        All offers <span style={{ color: "red" }}>99 999 offers</span>
+        All offers <span style={{ color: "red" }}>10 offers</span>
       </button>
     </>
   );

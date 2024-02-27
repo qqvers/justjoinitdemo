@@ -27,6 +27,7 @@ export default function Search() {
         defaultValue={textValue}
         onKeyDown={submitHandler}
         className="search_input"
+        style={{ paddingLeft: "20%", width: "13rem" }}
       />
     </div>
   );

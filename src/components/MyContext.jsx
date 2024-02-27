@@ -11,6 +11,7 @@ export const MyContextProvider = ({ children }) => {
   const [selectedTechnology, setSelectedTechnology] = useState();
   const [userText, setUserText] = useState("empty");
   const [savedFilters, setSavedFilters] = useState([]);
+  const [jobsTotal, setJobsTotal] = useState();
 
   const latestSearch = {
     currency: selectedCurrency,
@@ -64,6 +65,8 @@ export const MyContextProvider = ({ children }) => {
     setSelectedTechnology,
     userText,
     setUserText,
+    jobsTotal,
+    setJobsTotal,
     handleSavedFilters,
     handleDeleteFilter,
   };
