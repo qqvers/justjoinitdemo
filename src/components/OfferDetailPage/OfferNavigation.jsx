@@ -1,4 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ReactComponent as IconRight } from "../../photos3_icons/arrow_profile.svg";
+import { ReactComponent as IconArrowBack } from "../../photos3_icons/arrow_back.svg";
 
 export default function OfferNavigation({ selectedItem }) {
   const location = useLocation();
@@ -23,13 +25,17 @@ export default function OfferNavigation({ selectedItem }) {
 
   return (
     <div className="offer_navigation_container">
-      <button onClick={handleClickBack}>Back</button>
+      <button onClick={handleClickBack} className="navigation_button">
+        <IconArrowBack style={{ transform: "rotate(180deg)" }} />
+      </button>
       <Link to="/">All offers</Link>
-      <span>&gt;</span>
+      <IconRight style={{ transform: "rotate(-90deg)" }} />
       <Link to={buildPathWithTechnology(selectedItem.technologies[0])}>
         {selectedItem.technologies[0]}
       </Link>
-      <span>&gt;</span>
+      <span>
+        <IconRight style={{ transform: "rotate(-90deg)" }} />
+      </span>
       <Link to={location.pathname}>{selectedItem.position}</Link>
     </div>
   );

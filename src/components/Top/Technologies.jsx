@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import ModalTechnologies from "./ModalTechnologies";
 import { technologiesData } from "../../data_technologies";
 import { MyContext } from "../MyContext";
+import { ReactComponent as Icon } from "../../photos3_icons/dots.svg";
 
 export default function Technologies() {
   const [displayCount, setDisplayCount] = useState(3);
@@ -62,7 +63,14 @@ export default function Technologies() {
           </div>
         ))}
         <button onClick={handleModal} className="technologies_button">
-          ...
+          <Icon
+            style={{
+              position: "relative",
+              scale: "0.2",
+              transform: "rotate(90deg)",
+              bottom: "2rem",
+            }}
+          />
         </button>
         <ModalTechnologies
           ref={dialog}

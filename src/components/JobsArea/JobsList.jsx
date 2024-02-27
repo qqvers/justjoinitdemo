@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { jobData } from "../../data";
 import { MyContext } from "../MyContext";
+import { ReactComponent as IconCompany } from "../../photos3_icons/company.svg";
+import { ReactComponent as IconRemote } from "../../photos3_icons/remote.svg";
+import { ReactComponent as IconCity } from "../../photos3_icons/city.svg";
 
 export default function JobsList({ newJobData, currentID, style }) {
   const {
@@ -130,10 +133,37 @@ export default function JobsList({ newJobData, currentID, style }) {
               <img src={job.logo} alt="Company Logo" />
               <div className="job_list_column_two">
                 <span>{job.position}</span>
-                <p>{job.company}</p>
-                <p>{job.city}</p>
+                <p>
+                  <IconCompany
+                    style={{
+                      position: "relative",
+                      top: "0.1rem",
+                    }}
+                  />
+                  {job.company}
+                </p>
+                <p>
+                  <IconCity
+                    style={{
+                      position: "relative",
+                      top: "0.1rem",
+                    }}
+                  />
+                  {job.city}
+                </p>
                 <p className={job.fullyRemote ? "job_list_remote" : null}>
-                  {job.fullyRemote ? "Fully Remote" : null}
+                  {job.fullyRemote && (
+                    <>
+                      <IconRemote
+                        style={{
+                          position: "relative",
+                          top: "0.3rem",
+                          scale: "0.8",
+                        }}
+                      />
+                      Fully Remote
+                    </>
+                  )}
                 </p>
                 <p className={job.friendly ? "job_friendly_workplace" : ""}></p>
               </div>

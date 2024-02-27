@@ -328,6 +328,9 @@ input:checked + .slider:before {
   background-color: white;
   width: 10rem;
   height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .location_button:hover {
   border-color: black;
@@ -614,6 +617,9 @@ input:checked + .slider:before {
   border: none;
   border-radius: 2rem;
   font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .offertype_container button:hover {
@@ -711,7 +717,7 @@ input:checked + .slider:before {
 }
 .job_list_column_two > p {
   display: inline-block;
-
+  text-align: center;
   margin: 0 0.5rem;
   margin-top: 0.9rem;
   color: rgb(117, 117, 117);
@@ -722,8 +728,9 @@ input:checked + .slider:before {
   border: none;
   background-color: rgb(233, 233, 233);
   scale: 80%;
-  padding: 0.2rem;
+  padding: 0 0.3rem 0.3rem 0.3rem;
 }
+
 .job_friendly_workplace {
   width: 1rem;
   height: 1rem;
@@ -768,12 +775,15 @@ input:checked + .slider:before {
 }
 
 .job_list_element_technology p {
-  display: inline;
+  display: inline-block;
+  position: relative;
   padding: 0.2rem;
   margin: 0 0.2rem;
-  width: 100%;
+
   border-radius: 2rem;
   border: 0.5px solid rgb(204, 202, 202);
+  min-width: 2rem;
+  text-align: center;
 }
 /*OfferTop*/
 .offer_wrapper {
@@ -803,8 +813,9 @@ input:checked + .slider:before {
 }
 
 .offer_top span {
-  margin-left: 1rem;
+  position: relative;
   margin-right: 2rem;
+  bottom: 0.3rem;
 }
 .offer_top h1 {
   margin-left: 1rem;
@@ -815,6 +826,7 @@ input:checked + .slider:before {
   margin: 2rem 1rem;
   border-radius: 1rem;
   height: 4rem;
+  display: flex;
 }
 .offer_top_salary span {
   position: relative;
@@ -826,6 +838,24 @@ input:checked + .slider:before {
   margin-left: 1rem;
   margin-top: 0.7rem;
   font-size: 0.9rem;
+}
+
+.offer_top_salary_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 4rem;
+}
+
+.offer_top_salary_value p:first-child {
+  font-size: 1.2rem;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.offer_top_salary_value p:nth-child(2) {
+  margin: 0;
 }
 
 /*OfferUnderTop*/

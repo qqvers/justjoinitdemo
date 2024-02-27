@@ -1,5 +1,8 @@
 import React, { useState, useRef } from "react";
 import ModalMoreFilters from "./ModalMoreFilters";
+import { ReactComponent as Icon } from "../../photos3_icons/filter.svg";
+import { ReactComponent as IconAfter } from "../../photos3_icons/arrow_profile.svg";
+
 export default function MoreFilters() {
   const [selectedLocation, setSelectedLocation] = useState("More filters");
   const dialog = useRef();
@@ -17,8 +20,10 @@ export default function MoreFilters() {
   }
   return (
     <>
-      <button type="button" onClick={handleModal}>
-        {selectedLocation}
+      <button type="button" onClick={handleModal} className="location_button">
+        <Icon />
+        <span>More Filters</span>
+        <IconAfter />
       </button>
       <ModalMoreFilters
         ref={dialog}
