@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import ModalMenu from "./ModalMenu";
+import { ReactComponent as Icon } from "../../photos3_icons/menu.svg";
+
 export default function Menu() {
   const [selected, setSelected] = useState("Menu");
   const dialog = useRef();
@@ -17,11 +19,11 @@ export default function Menu() {
   }
 
   return (
-    <>
+    <div className="menu_container">
       <button onClick={handleModal} className="navigation_button">
-        {selected}
+        <Icon />
       </button>
       <ModalMenu ref={dialog} handleSelect={handleSelect} selected={selected} />
-    </>
+    </div>
   );
 }

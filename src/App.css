@@ -94,15 +94,20 @@ input:checked + .slider:before {
 /*Navigation*/
 .navigation_button {
   background-color: transparent;
-
   border: none;
-  border-radius: 15px;
+  border-radius: 2rem;
   height: 2.5rem;
-  width: auto;
+  width: 2.5rem;
   font-size: 16px;
   cursor: pointer;
   outline: none;
   transition: background-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation_button span {
+  margin-right: 0.5rem;
 }
 
 .navigation_button:hover {
@@ -179,6 +184,8 @@ input:checked + .slider:before {
 /*Gwiazdka*/
 .star_container {
   position: relative;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 .star_dialog {
@@ -218,6 +225,8 @@ input:checked + .slider:before {
 /*Currency.css*/
 .currency_container {
   position: relative;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 .currency_dialog {
@@ -254,6 +263,12 @@ input:checked + .slider:before {
   text-decoration: none;
   color: black;
 }
+/*Menu*/
+.menu_container {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-left: 1rem;
+}
 
 /* HomePageTop.jsx */
 .hmp_wrapper {
@@ -267,7 +282,19 @@ input:checked + .slider:before {
 }
 
 /*Search.jsx*/
+.input-container {
+  position: relative;
+  display: inline-block; /* Aby kontener dopasowywał się do zawartości */
+}
+
+.input-icon {
+  position: absolute;
+  top: 15%;
+  left: 13%;
+}
+
 .search_input {
+  padding-left: 3rem;
   border: 1px solid rgb(212, 212, 212);
   border-radius: 2rem;
   background-color: rgb(226, 223, 223, 0.5);
