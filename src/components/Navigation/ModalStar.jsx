@@ -1,5 +1,6 @@
 import { forwardRef, useContext } from "react";
 import { MyContext } from "../MyContext";
+import { ReactComponent as Icon } from "../../photos3_icons/delete.svg";
 
 const ModalStar = forwardRef(function ModalStar({ handleSelect }, ref) {
   const { savedFilters, handleDeleteFilter } = useContext(MyContext);
@@ -12,18 +13,25 @@ const ModalStar = forwardRef(function ModalStar({ handleSelect }, ref) {
       className="star_dialog"
     >
       <div className="modal_star_container">
-        <span>Saved searches</span>
+        <span className="modal_star_top_text">Saved searches</span>
         {savedFilters.length > 0 ?? (
           <button className="navigation_button modal_star_close">X</button>
         )}
         <ul>
           {savedFilters.map((filter, index) => (
             <li key={index} onClick={handleSelect}>
-              City: {filter.city}, Remote: {filter.remote}, Offer:
-              {filter.offer}, Salary: {filter.salary}
-              <button onClick={() => handleDeleteFilter(index)}>
-                !DELETE!
-              </button>
+              <div>
+                <span>
+                  City: {filter.city === "Location" ? "default" : filter.city}
+                </span>
+                <span>Remote: {filter.remote ? "yes" : "no"}</span>
+              </div>
+              <div className="modal_star_buttons">
+                <button>Go to offers</button>
+                <button onClick={() => handleDeleteFilter(index)}>
+                  <Icon />
+                </button>
+              </div>
             </li>
           ))}
         </ul>

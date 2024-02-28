@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../MyContext";
+import { ReactComponent as Icon } from "../../photos3_icons/star.svg";
 
 export default function Subscribe() {
   const {
@@ -38,7 +39,8 @@ export default function Subscribe() {
         )
       }
     >
-      Subscribe
+      <Icon></Icon>
+      <span>Subscribe</span>
     </button>
   );
 }

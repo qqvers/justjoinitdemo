@@ -40,7 +40,23 @@ export const MyContextProvider = ({ children }) => {
       technology: technology,
     };
 
-    setSavedFilters((prevState) => prevState.concat(newFilter));
+    setSavedFilters((prevState) => {
+      const filterExists = prevState.some(
+        (filter) =>
+          filter.city === newFilter.city &&
+          filter.remote === newFilter.remote &&
+          filter.offer === newFilter.offer &&
+          filter.salary === newFilter.salary &&
+          filter.currency === newFilter.currency &&
+          filter.technology === newFilter.technology
+      );
+
+      if (filterExists) {
+        return prevState;
+      }
+
+      return prevState.concat(newFilter);
+    });
   }
 
   function handleDeleteFilter(indexToDelete) {
