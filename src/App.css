@@ -8,6 +8,7 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100%;
 }
 
 ::backdrop {
@@ -196,6 +197,7 @@ input:checked + .slider:before {
   margin-top: 3rem;
   margin-right: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
 }
 
 .star_dialog ul {
@@ -205,13 +207,7 @@ input:checked + .slider:before {
 }
 
 .star_dialog li {
-  padding: 10px;
-}
-
-.star_dialog li:hover {
-  background-color: #f7f7f7;
-  border-radius: 1rem;
-  cursor: pointer;
+  padding-bottom: 10px;
 }
 
 .star_dialog li img {
@@ -220,6 +216,30 @@ input:checked + .slider:before {
 .star_dialog li a {
   text-decoration: none;
   color: black;
+}
+
+.modal_star_container {
+  margin: 1rem 1rem;
+}
+
+.modal_star_container li {
+  padding: 1rem;
+  border: grey solid 1px;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.modal_star_container span {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.modal_star_close {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  font-weight: bold;
+  left: 60%;
 }
 
 /*Currency.css*/
@@ -268,6 +288,64 @@ input:checked + .slider:before {
   height: 2.5rem;
   width: 2.5rem;
   margin-left: 1rem;
+}
+
+.modal_menu_dialog {
+  position: fixed;
+  margin-right: 0;
+  margin-top: 0;
+  border: 0;
+  border-color: white;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  height: 100vh;
+}
+.modal_menu_dialog::backdrop {
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
+.modal_menu_close {
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid rgb(212, 212, 212);
+  background-color: transparent;
+  border-radius: 50%;
+}
+.modal_menu_close:hover {
+  border-color: black;
+}
+.modal_menu_dialog ul {
+  padding: 0;
+}
+
+.modal_menu_dialog ul li {
+  text-align: left;
+  font-size: 1.2rem;
+  color: rgb(34, 34, 34);
+  list-style-type: none;
+  padding: 0.6rem;
+}
+
+.modal_menu_dialog ul li:hover {
+  background-color: rgb(209, 209, 209);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.modal_menu_dialog ul li svg {
+  position: relative;
+  margin-right: 1rem;
+  top: 0.3rem;
+}
+
+.modal_menu_top_wrapper {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.modal_menu_top_wrapper span {
+  position: relative;
+  margin-left: 1rem;
+  top: 0.4rem;
 }
 
 /* HomePageTop.jsx */
@@ -972,11 +1050,11 @@ input:checked + .slider:before {
   margin: 0 0.5rem;
   padding: 0.5rem;
   transition: background-color 0.3s ease-out;
+  border-radius: 30%;
 }
 .footer_social_media img:hover {
   cursor: pointer;
   background-color: rgb(219, 219, 219);
-  border-radius: 30%;
 }
 
 /*OfferSimilar*/

@@ -11,16 +11,23 @@ const ModalStar = forwardRef(function ModalStar({ handleSelect }, ref) {
       }}
       className="star_dialog"
     >
-      <h2>Saved Filters</h2>
-      <ul>
-        {savedFilters.map((filter, index) => (
-          <li key={index} onClick={handleSelect}>
-            City: {filter.city}, Remote: {filter.remote}, Offer:
-            {filter.offer}, Salary: {filter.salary}
-            <button onClick={() => handleDeleteFilter(index)}>!DELETE!</button>
-          </li>
-        ))}
-      </ul>
+      <div className="modal_star_container">
+        <span>Saved searches</span>
+        {savedFilters.length > 0 ?? (
+          <button className="navigation_button modal_star_close">X</button>
+        )}
+        <ul>
+          {savedFilters.map((filter, index) => (
+            <li key={index} onClick={handleSelect}>
+              City: {filter.city}, Remote: {filter.remote}, Offer:
+              {filter.offer}, Salary: {filter.salary}
+              <button onClick={() => handleDeleteFilter(index)}>
+                !DELETE!
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </dialog>
   );
 });
