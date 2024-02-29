@@ -58,7 +58,7 @@ const ModalLocation = forwardRef(function ModalLocation({ handleSelect }, ref) {
           <h2>Location</h2>
           <div
             onClick={() => {
-              handleSelect("Location");
+              setSelectedCity("");
             }}
           >
             Clear filters

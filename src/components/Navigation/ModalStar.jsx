@@ -10,9 +10,9 @@ const ModalStar = forwardRef(function ModalStar({ handleSelect }, ref) {
       onClick={() => {
         handleSelect(null);
       }}
-      className="star_dialog"
+      className="star_dialog  demo-warning"
     >
-      <div className="modal_star_container">
+      <div className="modal_star_container ">
         <span className="modal_star_top_text">Saved searches</span>
         {savedFilters.length > 0 ?? (
           <button className="navigation_button modal_star_close">X</button>

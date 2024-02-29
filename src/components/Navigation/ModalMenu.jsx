@@ -16,7 +16,11 @@ import { ReactComponent as IconTerms } from "../../photos4_menu/report_terms.svg
 
 const ModalMenu = forwardRef(function ModalMenu({ handleSelect }, ref) {
   return (
-    <dialog ref={ref} onClick={handleSelect} className="modal_menu_dialog">
+    <dialog
+      ref={ref}
+      onClick={handleSelect}
+      className="modal_menu_dialog  demo-warning"
+    >
       <div className="modal_menu_top_wrapper">
         <button className="modal_menu_close">X</button>
         <span>Menu</span>

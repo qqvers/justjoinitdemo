@@ -17,14 +17,20 @@ export default function Location() {
   }
 
   function handleSelect(value) {
-    if (value !== null && value !== "submitted") {
+    if (value === "") {
+      setSelectedCity("Location");
+      setIsShown(!isShown);
+      dialog.current.close();
+    }
+    if (value !== null && value !== "submitted" && value !== "") {
       setSelectedCity(value);
+      setIsShown(!isShown);
       dialog.current.close();
     }
     if (value === null) {
+      setIsShown(!isShown);
       dialog.current.close();
     }
-    setIsShown(!isShown);
   }
   return (
     <div className="position_modal_location_wrapper">

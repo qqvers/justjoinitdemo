@@ -1,10 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import ModalMoreFilters from "./ModalMoreFilters";
 import { ReactComponent as Icon } from "../../photos3_icons/filter.svg";
 import { ReactComponent as IconAfter } from "../../photos3_icons/arrow_profile.svg";
 
 export default function MoreFilters() {
-  const [selectedLocation, setSelectedLocation] = useState("More filters");
   const dialog = useRef();
 
   function handleModal() {
@@ -12,11 +11,10 @@ export default function MoreFilters() {
   }
 
   function handleSelect(value) {
-    if (value !== null) {
-      setSelectedLocation(value);
+    if (value === null) {
+    } else {
+      dialog.current.close();
     }
-
-    dialog.current.close();
   }
   return (
     <>
@@ -25,11 +23,7 @@ export default function MoreFilters() {
         <span>More Filters</span>
         <IconAfter />
       </button>
-      <ModalMoreFilters
-        ref={dialog}
-        handleSelect={handleSelect}
-        selected={selectedLocation}
-      />
+      <ModalMoreFilters ref={dialog} handleSelect={handleSelect} />
     </>
   );
 }
